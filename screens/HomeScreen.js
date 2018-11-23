@@ -3,10 +3,7 @@ import { Text, View, StyleSheet } from 'react-native';
 import { Constants } from 'expo';
 import { ButtonGroup } from 'react-native-elements';
 
-//import "@expo/vector-icons";
-
-//const list_code = "<Text>Questa è la mia lista</Text>";
-
+import EventList from './include/EventList';
 
 export default class App extends Component {
   state = {
@@ -18,26 +15,29 @@ export default class App extends Component {
     this.setState({index});
     if(index==0)
      //this.setState({content: {list_code} });
-     this.setState( {content: "<Text>Questa è la mia lista</Text>"} );
-    else if(index==1)
+     this.setState( {content: "<EventList />"} );
+   /* else if(index==1)
      this.setState({content: "<Text>Questa è il mio calendario!</Text>"});
     else
      //this.state.content = "Questa è la mappa";
      this.setState({content: "<Text>Questa è la mia mappa!</Text>"});
+*/
   }
   
   render() {
     return (
       <View style={styles.container}>
-      <ButtonGroup
+       <ButtonGroup
         selectedBackgroundColor="gray"
         onPress={this.updateIndex}
         selectedIndex={this.state.index}
         buttons={['Lista', 'Calendario', 'Mappa']}
         containerStyle={{height: 30, borderRadius:50}} />
-      <View>
-       {/*this.state.content*/}
-      </View>
+
+	<EventList />
+       <View>
+        {/*this.state.content*/}
+       </View>
       </View>
     );
   }
