@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { Constants } from 'expo';
-import { ButtonGroup } from 'react-native-elements';
-
-import EventList from './include/EventList';
+import React, { Component } 		from 'react';
+import { Text, View, StyleSheet } 	from 'react-native';
+import { Constants } 			from 'expo';
+import { ButtonGroup } 			from 'react-native-elements';
+import EventList 			from './include_HomeScreen/EventList';
 
 export default class App extends Component {
   state = {
-    index: 0,
-    content:"<Text>List/Map</Text>",
+    index: 	0,
+    content: 	"<View><Text>List/Map</Text></View>"
   }
   
   updateIndex = (index) => {
@@ -35,9 +34,7 @@ export default class App extends Component {
         containerStyle={{height: 30, borderRadius:50}} />
 
 	<EventList />
-       <View>
-        {/*this.state.content*/}
-       </View>
+
       </View>
     );
   }
